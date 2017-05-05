@@ -1,1 +1,15 @@
-chat component
+Messages:
+<div ng-repeat="msg in $ctrl.chatMessages track by $index">
+    author: {{msg.Author}} | time: {{msg.Time | date:'medium'}} | message: {{msg.Content}}
+</div>
+
+<br/>
+
+<div>
+    Please enter your message:
+</div>
+
+<form ng-submit="$ctrl.addMessage($ctrl.message)">
+    <textarea ng-model="$ctrl.message"></textarea>
+    <button ng-disabled="!$ctrl.message">Send</button>
+</form>

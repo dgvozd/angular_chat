@@ -10,4 +10,8 @@ export class LoginService {
             localStorage.setItem(this.storageUserName, userName);
         }
     }
+
+    public getUserName(): string{
+        return localStorage.getItem(this.storageUserName);
+    }
 };
